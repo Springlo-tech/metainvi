@@ -1,0 +1,18 @@
+
+#cta-privacidade {
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+   
+}
+
+#cta .title-privacidade{
+    font-size: 1.0rem;
+    color: #000000;
+}
+
+#cta .description-privacidade{
+    color: #2f2e2e;
+    font-size: 0.8rem;
+}
