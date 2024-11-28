@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 footer{
     background-color: #ffe8b4;
 }
@@ -29,4 +30,27 @@ a.btprivacidade{
 a.btprivacidade:hover{
     font-size:20px;
     font-weight: bold;
+=======
+footer{
+    background-color: #ffe8b4;
+}
+#footer_items{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8% 24px 8%;
+    align-items:center;
+}
+
+#copyright{
+    color: #1d1d1d;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 600px){
+    #footer_items{
+        flex-direction: column;
+        gap:20px;
+
+    }
+>>>>>>> a80fea0927534b6b7af8dc1306f36254099696a8
 }
