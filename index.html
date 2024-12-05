@@ -51,12 +51,18 @@
                 <a href="#como-funciona">Como Funciona</a>
               </li>
           </ul>
-          <button class="btn-default">
-            Peça aqui
-          </button>
     </div>
    </header>
-   <main id="content">
+   <main >
+
+   <session class="topo-do-site">
+    <div class="interface">
+        <div class="flex">
+
+        </div><!--flex-->
+    </div><!--interface-->
+    </session><!--topo-do-site-->
+
     <section id="inicio">
         <div class="shape"></div>
         <div id="cta">
@@ -96,7 +102,7 @@
     </section>
     
     <section id="sobre-livro">
-        <img src="src/images/realidade-aumentada-capa.png" id="testimonial_chef"  alt="">
+        <img src="src/images/realidade-aumentada-capa.png" id="sobre-livro-capa"  alt="">
         <div id="sobre-livro-content">
             <h2 class="section-title">
                 "Bem-vindo à história de Tico!"
@@ -177,10 +183,11 @@
             </div>      
         </div>
       
-        <h3 class="baixe-pdf">
+        <h3 class="baixe-arquivo">
             Baixe o PDF
-            
-            <a href="downloads/meu-arquivo.pdf" download class="botao-download">Download PDF</a>
+            <button id ="botaoBaixar"> Visualizar e Imprimir</button>
+            <!--<a href="src/images/livro-interativo-capa.png" download id="botao-download">Download</a>-->
+            <img id ="minhaImagem"src="src/images/livro-interativo-capa.png" style="display:none;">
        
         </h3>
         

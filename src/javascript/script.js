@@ -60,6 +60,41 @@ ScrollReveal().reveal('#sobre-livro-chef',{
         distance:'20%'
         
     });
+    document.getElementById('botaoBaixar').addEventListener('click', function () {
+        const imagem = document.getElementById('minhaImagem');
+               // Tornar a imagem visível
+        imagem.style.display = 'block';
+    
+        // Recriar a janela de impressão toda vez que clicar
+        const janelaImpressao = window.open('', '_blank');
+    
+        // Forçar o navegador a carregar a imagem novamente, adicionando um parâmetro único
+        const imagemSrcComTimestamp = imagem.src + '?t=' + new Date().getTime();
+    
+        janelaImpressao.document.open(); // Abre a escrita do documento
+        janelaImpressao.document.write(`
+            <html>
+            <head>
+                <title>Imprimir</title>
+            </head>
+            <body style="margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh;">
+                <img src="${imagemSrcComTimestamp}" style="max-width:100%; height:auto;">
+            </body>
+            </html>
+        `);
+        janelaImpressao.document.close(); // Fecha a escrita
+          // Ocultar a imagem novamente na tela principal
+        imagem.style.display = 'none';
+        // Adicionando um atraso para garantir que o conteúdo da janela esteja carregado antes da impressão
+        setTimeout(function() {
+            janelaImpressao.focus(); // Focar a nova janela
+            janelaImpressao.print(); // Iniciar a impressão
+            janelaImpressao.close(); // Fechar a janela após a impressão
+        }, 500); // Esperar 500ms (meio segundo)
+    });
+    
+    
+      
 });
 
 
