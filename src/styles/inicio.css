@@ -51,6 +51,7 @@
     box-shadow: none;
 }
 #banner{
+    position: relative;
     display:flex;
     align-items: start;
     justify-content: end;
@@ -58,9 +59,21 @@
     z-index: 2;
 }
 #banner img{
-    height: 100%;
-    width: fit-content;
+    position: relative;
+    height: 80%;
+    width:fit-content;
+    animation: flutuar 2s ease-in-out infinite alternate;
+  
 }
+@keyframes flutuar {
+    0%{
+        top:0;
+    }
+    100%{
+        top:30px;
+    }
+}
+
 .breveLancamento{
     font-size: 1.5rem;
     color:  #f20d0d;}
@@ -71,20 +84,32 @@
     height: 100%;
     position: absolute;
     border-radius: 40% 30% 0% 20%;
-    top: 0;
+    top: 5;
     right: 0;
     z-index: 1;
 
 }
+
 @media screen and (max-width: 1170px) {
-    #inicio{
-        min-height: 100% ;
-        padding-top: 0px;
+ 
+
+    #inicio {
+        flex-direction: column; /* Organiza o layout em coluna em telas menores */
     }
-    #banner img,
+
+  
     #inicio .shape{
-        display: none;
+        display: none;      
+        
     }
+    #banner img {
+        width: 80%; /* A imagem ocupa até 90% da largura disponível */
+        max-width: 500px; /* Define a largura máxima para a imagem */
+        height: auto; /* Mantém a proporção */
+       
+    }
+
+   
     #cta{
         width: 100%;
         text-align: center;

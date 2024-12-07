@@ -7,6 +7,53 @@ header{
     background-color: var(--color-primary-1);
     z-index: 3;
 }
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.flex{
+    display:flex;
+}
+/*ESTILO DO TOPO DO SITE*/
+section.topo-do-site{
+    padding:40px 4%
+}
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+   
+}
+.topo-do-site h2{
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.topo-do-site .brevelancamento{
+    color:  rgb(240, 50, 75);
+    font-size: 19px;
+    margin:40px 0px;
+
+}
+
+.topo-do-site .subtitulo{
+
+    font-size: 22px;
+    margin:40px 100px;
+    justify-content: center;
+    color:  rgb(50, 57, 240);
+    
+   
+    
+}
+.topo-do-site .txt-topo-site p{
+    font-size: 20px;
+    margin:40px 0;
+}
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
 
 
 
@@ -29,16 +76,34 @@ header{
     gap: 48px;
     
 }
-
-.nav-item a{
-    text-decoration:none;
-    color: #000000; 
+.nav-item a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
     font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease; /* Suaviza todas as transições */
 }
 
-.nav-item.active a{
-    color: #000000; 
-    border-bottom: 3px solid #ffe100;
+.nav-item a:hover {
+    transform: scale(1.05); /* Sempre aumenta no hover */
+}
+
+.nav-item a:hover:not(.active) {
+    color: #0523bc;
+}
+
+.nav-item.active a {
+    color: #000000;
+    transform: scale(1.05); /* Garante a escala para o ativo */
+    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza a escala no ativo */
+}
+
+.nav-item.active a:hover {
+    transform: scale(1.05); /* Permite que o ativo responda ao hover */
+}
+
+#nav_list .nav-item:first-child.active a {
+    border-bottom: none; /* Remove a borda de "Início" */
 }
 
 #mobile_btn{

@@ -3,7 +3,7 @@
     min-height: calc(100vh - 91px);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 48px;
 }
 
@@ -11,6 +11,7 @@
     width: 500px;
     height: auto;
 }
+
 #sobre-livro  .section-subtitle{
     font-size: 3rem;
 }
@@ -34,13 +35,18 @@
 
 @media screen and (max-width: 1020px){
    
+   
+    #sobre-livro img {
+        width: 80%; /* A imagem ocupará até 80% da largura disponível */
+        max-width: 80%; /* Define a largura máxima para a imagem */
+        height: auto; /* Mantém a proporção */
+      }
+
     #sobre-livro .section-title{
         text-align: center;
         font-size:2.5rem;
     }
-   /*#sobre-livro-capa{
-        display:none;
-    }*/
+  
     #sobre-livro-content{
         width: 100%;
         display: flex;
@@ -52,6 +58,7 @@
         width: 100%;
         text-align: center;
         align-items: center;
+        flex-direction: column-reverse;
     }
     .botaoBaixar{
         display: flex;

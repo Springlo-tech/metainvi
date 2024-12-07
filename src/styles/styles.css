@@ -46,6 +46,24 @@ section{
 .btn-default:hover{
     background-color: #f8d477;
 }
+#botaoBaixar{
+    padding: 10px 40px;
+    font-size:14px;
+    font-weight: 600;
+    background-color:rgb(165, 165, 195);
+    border:0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;}
+
+
+ #botaoBaixar:hover{
+        background-color: rgb(134, 134, 198);
+        transform: scale(1.05);
+        transition: transform 0.3s ease; /* Transição suave */
+    
+    }
+
 .social-media-buttons{
     display: flex;
     gap: 18px;
