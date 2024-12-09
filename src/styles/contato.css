@@ -1,8 +1,11 @@
-#contato{
+#contato a{
    
     display: flex;
     flex-direction: column;
-}
+    text-decoration: none;
+    border-bottom: none;
+      }
+
 
 #contato  .section-title{
     display: flex;
