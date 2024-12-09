@@ -9,6 +9,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    
     <title>Springlo-tech</title>
     <meta name="description" content="Livro com tecnologia em realidade Aumentada">
     <meta name="keywords" content="livro-realidade-aumentada, tecnologia, livro interativo, animacoes 3D">
@@ -30,6 +32,9 @@
           <li class="nav-item ">
             <a href="#como-funciona">Como Funciona</a>
           </li>
+          <li class="nav-contato ">
+            <a href="#contato">Contato</a>
+          </li>
          
         </ul>
         
@@ -49,6 +54,9 @@
 
             <li class="nav-item">
                 <a href="#como-funciona">Como Funciona</a>
+            </li>
+            <li class="nav-contato">
+                <a href="#contato">Contato</a>
               </li>
           </ul>
          
@@ -181,8 +189,31 @@
             <img id ="minhaImagem"src="src/images/livro-interativo-capa.png" style="display:none;">
        
         </h3>
-        
-    </section>
+       
+    </section><!--comofunciona-->
+
+   
+
+    <section id="contato">
+        <h2 class="section-title"> Formulário de Contato</h2>
+        <div id="formulario-content">
+            
+            <form action="https://formsubmit.co/ajax/springlo1318@gmail.com"
+            class="form" method="POST" data-form>
+            <label for="name">Nome</label>
+            <input type="text" name="nome" id="nome" required>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" required>
+            <label for="message">Mensagem</label>
+            <textarea name="message" id="message" required></textarea>
+            <button type="button" data-button>Enviar</button>
+</form>
+           </form>
+
+        </div>
+      
+    </section> <!--fomrulario"-->
+    
     
    </main>
    <footer>
@@ -204,6 +235,7 @@
                 <i class="fa-brands fa-facebook"></i>
             </a>
         </div>
+       
     </div>
     
     

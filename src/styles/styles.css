@@ -5,7 +5,9 @@
 @import url('como-funciona.css');
 @import url('sobre-livro.css');
 @import url('privacidade.css');
+@import url('contato.css');
 @import url('footer.css');
+
 
 :root{
     --color-primary-1: #f4f5f7;
