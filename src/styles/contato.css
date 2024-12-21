@@ -1,28 +1,30 @@
-#contato a{
-   
+#contato{
+    min-height: calc(100vh - 91px);
     display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    border-bottom: none;
-      }
-
-
-#contato  .section-title{
-    display: flex;
-   
-    text-align:  center;
-    justify-content: center;
-    font-size: 1.5rem;
-    line-height: 1;
+   /* flex-direction: column;*/
+    align-items: center;
+    justify-content: start;
+    gap: 48px;
 }
+
+
+
 
 #contato-content{
-    margin-top: 60px;
-    align-items:  start;
-    justify-content: start;
-    line-height: 2;
-  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#feedbacks-contato{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
 .form{
     width: 100%;
     max-width: 32rem;
