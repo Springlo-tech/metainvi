@@ -17,6 +17,68 @@
     <meta name="author" content = "Springlo-Tech">
 
 </head>
+
+<script>
+  $(document).ready(function() {
+    // Oculta todas as seções ao carregar
+    $('#sobre-livro, #como-funciona, #sobre-loja, #sobre-contato').hide();
+
+    // Função para esconder todas e mostrar a desejada
+    function mostrarSecao(secaoID) {
+      $('#sobre-livro, #como-funciona, #sobre-loja').hide();
+      $(secaoID).fadeIn();
+    }
+    function ocultaInicial(){
+      $('#inicio, #contato').hide();
+      
+    }
+    function ocultaContato(){
+      $('#sobre-contato').hide();
+      
+    }
+    
+
+    // Detecta clique nos itens do menu
+    $('a[href="#inicio"]').click(function(e) {
+        $('#sobre-livro, #como-funciona, #sobre-loja').hide();
+        $('#inicio').fadeIn();
+    });
+    
+    $('a[href="#sobre-livro"]').click(function(e) {
+      e.preventDefault();
+      mostrarSecao('#sobre-livro');
+      ocultaInicial();
+      ocultaContato();
+      
+    });
+
+    $('a[href="#como-funciona"]').click(function(e) {
+      e.preventDefault();
+      mostrarSecao('#como-funciona');
+      ocultaInicial();
+      ocultaContato();
+
+    });
+
+    $('a[href="#sobre-loja"]').click(function(e) {
+      e.preventDefault();
+      mostrarSecao('#sobre-loja');
+      ocultaInicial();
+      ocultaContato();
+    });
+    $('a[href="#contato"]').click(function(e) {
+      e.preventDefault();
+      mostrarSecao('#sobre-contato');
+    
+    });
+
+    // Opcional: mostrar a seção correspondente se a URL já tiver um hash
+    const hash = window.location.hash;
+    if (hash) {
+      mostrarSecao(hash);
+    }
+  });
+</script>
 <body>
    <header>
     <nav id="navbar">
@@ -68,31 +130,47 @@
          
     </div>
    </header>
+   
+
    <main id="content">
+    
+    <section id="banner_Capa">
+           
+    </section>   
     <section id="inicio">
         <div class="shape"></div>
         <div id="cta">
 
             <h1 class="title">
-                Tico, o pequeno coelho e seu grande sonho
+                O que é Realidade Aumentada?
               
             </h1>
             <h2 class="subtitle">
-              Uma Leitura Além da Imaginação
+                Realidade Aumentada (RA) é uma tecnologia que combina elementos virtuais com o mundo real em tempo real.
+                A RA sobrepõe gráficos, sons e outras informações em nossa visão do mundo físico.
             </h2>
-            <p class="description">
-                 Bem-vindo ao universo mágico de 
-                 <span> "Tico, o pequeno coelho e seu grande sonho" </span> 
-                 ,uma experiência inovadora que combina literatura infantil com a magia da Realidade Aumentada! Com nosso aplicativo exclusivo disponível na Google Play, cada página do livro ganha vida, trazendo animações interativas e aventuras inesquecíveis para as crianças. Esteja pronto para transformar a leitura em uma jornada de aprendizado e diversão! Explore, aprenda e mergulhe nesta nova forma de contar histórias.
-            </p>
+            <class="description">
+                
+                <p>
+                    Nossos aplicativos estão disponíveis gratuitamente na Google Play Store.
+                    É só baixar, abrir o app e apontar a câmera do celular para um dos nossos produtos.    
+                </p>
+           
+               
+           
           
         </div>
         <div id="banner">
-            <img src="src/images/livro-interativo-casa.png" alt="livro infantil, interativo, inovador">
+            <img src="src/images/capa_realidade_aumentada.png" alt="livro infantil, interativo, inovador">
         </div>
 
     </section>
+
+
+
+        
     <section id="sobre-livro">
+
         <img src="src/images/realidade-aumentada-capa.png" id="sobre-livro-capa"  alt="livro infantil, realidade aumentada, tecnologia, interativo, educação">
         <div id="sobre-livro-content">
             <h2 class="section-title">
@@ -123,13 +201,13 @@
         <div id="dicas-como-funciona">
             <div class="dicas">
                 
-                <img src="src/images/icone-livro.png" class=dicas-image alt="">
+                <img src="src/images/icone-loja.png" class=dicas-image alt="">
                 <h3 class="como-funciona-title">
-                    Adquira o Livro
+                    Adquira o nosso produto
                 </h3>
 
                 <span class="como-funciona-description">
-                    Garanta seu exemplar físico na nossa parceira Uiclap ou baixe gratuitamente a capa, imprima e descubra a magia da realidade aumentada.
+                    Um toque de criatividade para cada momento! Descubra nossos produtos e adicione alegria ao seu dia!
                 </span>
                 
             </div>
@@ -142,7 +220,7 @@
                 </h3>
 
                 <span class="dicas-description">
-                    Acesse a Google Play Store e procure pelo aplicativo "Springlo Book". Faça o download e instale no seu dispositivo.
+                    Acesse a Google Play Store e procure pelo aplicativo "Springlo Book" ou "Springlo Magic". Faça o download e instale no seu dispositivo.
                 </span>
 
             </div>
@@ -151,11 +229,11 @@
                
                 <img src="src/images/icone-celular.png" class=dicas-image alt="">
                 <h3 class="como-funciona-title">
-                    Aponte para o Livro
+                    Aponte para o produto
                 </h3>
 
                 <span class="como-funciona-description">
-                    Abra o aplicativo, posicione a câmera sobre as imagens no livro .
+                    Abra o aplicativo, posicione a câmera sobre as imagens de um dos nossos produtos .
                 </span>
               
 
@@ -164,27 +242,27 @@
                 
                 <img src="src/images/icone-varinha.png" class=dicas-image alt="">
                 <h3 class="como-funciona-title">
-                    Boa Leitura!
+                    Desperte a Imaginação !
                 </h3>
 
                 <span class="como-funciona-description">
-                    Veja a magia em Realidade Aumentada. Aproveite uma nova maneira de ler e aprender, combinando tecnologia e criatividade para uma experiência inesquecível.
+                    Veja a magia em Realidade Aumentada. Mais que um produto, uma experiência!.
                 </span>
 
             </div>      
         </div>
       
-        <h3 class="baixe-arquivo">
+      <!--  <h3 class="baixe-arquivo">
           
             <button id ="botaoBaixar"> Visualizar e Imprimir</button>
-            <!--<a href="src/images/livro-interativo-capa.png" download id="botao-download">Download</a>-->
+            <a href="src/images/livro-interativo-capa.png" download id="botao-download">Download</a>
             <img id ="minhaImagem"src="src/images/livro-interativo-capa.png" style="display:none;">
        
-        </h3>
+        </h3>-->
        
     </section><!--comofunciona-->
 
-    <div id="gallery-video">
+    <!--<div id="gallery-video">
         <div class="video">
             <img src="src/images/coelho.png" class=dicas-video alt=""></img>
         </div>
@@ -194,14 +272,25 @@
         <div class="video">
             <video src="src/images/video_livro_infantil.mp4" autoplay  muted  class=dicas-video alt=""></video>
         </div>
-    </div>
+    </div>-->
 
+    
     <section id="sobre-loja">
-        <img src="src/images/livro-uiclap.jpg" id="sobre-loja-uiclap" alt="sobre-loja-uiclap">
-        <div id="sobre-loja-content">   
-           <a class="bt-uiclap" href="https://loja.uiclap.com/titulo/ua75581/">Ir para a Loja UIClap</a>    
+
+        <div class="sobre-loja-container">
+            <img src="src/images/loja-elo7.jpg" id="sobre-loja-uiclap" alt="sobre-loja-elo7">
+            <a href="https://www.elo7.com.br/SpringloTech/" style="background-color:#007bff; color:white; padding:10px 20px;
+             text-decoration:none; border-radius:5px; display:inline-block; font-size:16px;" target="_blank">Compre Aqui</a>
         </div>
+
+        <div class="sobre-loja-container">
+            <img src="src/images/livro-uiclap.jpg" id="sobre-loja-uiclap" alt="sobre-loja-uiclap">
+            <a href="https://loja.uiclap.com/titulo/ua75581/" style="background-color:#007bff; color:white; padding:10px 20px;
+             text-decoration:none; border-radius:5px; display:inline-block; font-size:16px;" target="_blank">Compre Aqui</a>
+        </div>
+
     </section>
+
     
     <section id="sobre-contato">
       

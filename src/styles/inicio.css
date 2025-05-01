@@ -4,6 +4,21 @@
     position: relative;
 }
 
+
+
+#banner_Capa {
+    width: 100%;
+    background-image: url('../images/banner.png'); /* ajuste o caminho se necessário */
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    
+    padding-top: calc(268 / 1920 * 90%); /* mantém proporção responsiva */
+
+   
+  }
 #cta {
     width: 35%;
     display: flex;
@@ -16,7 +31,7 @@
     color: #4e4c4c;
 }
 #cta .subtitle{ 
-    font-size: 1.6rem;
+    font-size: 1.0rem;
     color:  #3e4d99;
 
 }

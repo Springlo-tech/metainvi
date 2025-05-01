@@ -6,6 +6,8 @@
     min-height: 100vh;
 }
 
+
+
 #dishes { /* Alterado para .dishes ao invés de #dishes */
     width: 100%;
     display: flex;

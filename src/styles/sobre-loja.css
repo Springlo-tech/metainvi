@@ -1,25 +1,33 @@
 
-#sobre-loja{
+#sobre-loja {
     min-height: calc(100vh - 91px);
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: start; /* Alinha os containers internos no início (esquerda) */
     gap: 48px;
 }
 
-#sobre-loja-uiclap{
-    width: 500px;
-    height: auto;
+.sobre-loja-container {
+    display: flex;
+    flex-direction: column; /* Coloca a imagem e o botão em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda dentro do container */
 }
 
-#sobre-loja  .section-subtitle{
+#sobre-loja-uiclap {
+    width: 500px;
+    height: auto;
+    margin-bottom: 20px; /* Adiciona espaço entre a imagem e o botão */
+}
+
+#sobre-loja .section-subtitle {
     font-size: 3rem;
 }
 
-#sobre-loja-content{
+#sobre-loja-content {
     width: 50%;
 }
-#feedbacks-loja{
+
+#feedbacks-loja {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -27,59 +35,60 @@
     margin-top: 30px;
 }
 
-
-.feedback-loja-content p{
+.feedback-loja-content p {
     display: flex;
     justify-content: space-between;
 }
 
 #sobre-loja a.bt-uiclap {
-    text-decoration: none; /* Remove a linha embaixo do link */
-    color: rgb(0, 0, 0); /* Cor do texto */
-    font-size: 30px; /* Tamanho inicial do texto */
-    transition: font-size 0.3s ease, font-weight 0.3s ease; /* Transição suave para hover */
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    transition: font-size 0.3s ease, font-weight 0.3s ease;
 }
 
 #sobre-loja a.bt-uiclap:hover {
-    font-size: 40px; /* Aumenta o tamanho da fonte ao passar o mouse */
-    font-weight: bold; /* Torna o texto em negrito ao passar o mouse */
+    font-size: 40px;
+    font-weight: bold;
 }
-
-
 
 @media screen and (max-width: 1020px) {
     #sobre-loja {
         width: 100%;
         display: flex;
-        flex-direction: column; /* Coloca os elementos em coluna */
+        flex-direction: column; /* Mantém a organização em coluna em telas menores */
         align-items: center;
         text-align: center;
+        gap: 20px; /* Ajusta o gap para telas menores */
+    }
+
+    .sobre-loja-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza a imagem e o botão em telas menores */
     }
 
     #sobre-loja img {
-        width: 80%; /* A imagem ocupará até 80% da largura disponível */
-        height: auto; /* Mantém a proporção */
-        margin-bottom: 20px; /* Espaçamento entre a imagem e o link */
+        width: 80%;
+        height: auto;
+        margin-bottom: 20px;
     }
 
     #sobre-loja-content {
-        width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
+        width: 100%;
         display: flex;
-        flex-direction: column; /* Organiza os elementos verticalmente */
-        align-items: center; /* Centraliza o link */
+        flex-direction: column;
+        align-items: center;
     }
 
     #sobre-loja a.bt-uiclap {
-        text-decoration: none; /* Remove a linha embaixo do link */
-        color: rgb(0, 0, 0); /* Cor do texto */
-        font-size: 15px; /* Tamanho inicial do texto */
-        transition: font-size 0.3s ease, font-weight 0.3s ease; /* Transição suave para hover */
-        margin-top: 10px; /* Espaço entre o link e outros elementos */
+        font-size: 15px;
+        margin-top: 10px;
     }
-    
+
     #sobre-loja a.bt-uiclap:hover {
-        font-size: 20px; /* Aumenta o tamanho da fonte ao passar o mouse */
-        font-weight: bold; /* Torna o texto em negrito ao passar o mouse */
+        font-size: 20px;
+        font-weight: bold;
     }
 }
 
