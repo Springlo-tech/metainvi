@@ -8,6 +8,7 @@ const sections=$('section');
 const novItems=$('.nav-item');
 
 
+
 $(window).on('scroll', function(){
     const header=$('header');
    

@@ -10,6 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+    <script src="src/javascript/script.js"></script>
     
     <title>Springlo-tech</title>
     <meta name="description" content="Explore livro com tecnologia em Realidade Aumentada, recursos educacionais para crianças, professores e adultos">
@@ -134,9 +136,11 @@
 
    <main id="content">
     
-    <section id="banner_Capa">
-           
-    </section>   
+   
+    <div id="banner_Capa">
+        <img src="src/images/banner.png" alt="livro infantil, interativo, inovador">
+    </div>
+
     <section id="inicio">
         <div class="shape"></div>
         <div id="cta">
@@ -155,9 +159,6 @@
                     Nossos aplicativos estão disponíveis gratuitamente na Google Play Store.
                     É só baixar, abrir o app e apontar a câmera do celular para um dos nossos produtos.    
                 </p>
-           
-               
-           
           
         </div>
         <div id="banner">
@@ -165,36 +166,26 @@
         </div>
 
     </section>
-
-
-
         
     <section id="sobre-livro">
-
         <img src="src/images/realidade-aumentada-capa.png" id="sobre-livro-capa"  alt="livro infantil, realidade aumentada, tecnologia, interativo, educação">
         <div id="sobre-livro-content">
             <h2 class="section-title">
                 "Bem-vindo à história de Tico!"
             </h2>
-           
-            <div id="feedbacks">
-                <div class="feedback">
-                    
-                    <div class="feedback-content">
-                        
-                        <p>
-                             Neste livro, você vai conhecer Tico, um pequeno coelho com um grande sonho. Ele vive numa floresta tranquila com seus pais e ajuda na plantação de cenouras, as mais saborosas de todas! Mas Tico está prestes a embarcar numa aventura incrível. Prepare-se para voar nas asas de um sonho e descobrir como até mesmo o menor dos coelhinhos pode alcançar o topo das montanhas quando acredita em si mesmo.
-                            Vamos decolar juntos nesta emocionante jornada!"
-                        </p>
-                    </div>
-                </div>
-            </div>
-           
+
+            <class="description">
+                
+            <p>
+                Neste livro, você vai conhecer Tico, um pequeno coelho com um grande sonho. Ele vive numa floresta tranquila com seus pais e ajuda na plantação de cenouras, as mais saborosas de todas! Mas Tico está prestes a embarcar numa aventura incrível. Prepare-se para voar nas asas de um sonho e descobrir como até mesmo o menor dos coelhinhos pode alcançar o topo das montanhas quando acredita em si mesmo.
+                Vamos decolar juntos nesta emocionante jornada!"
+            </p>
 
         </div>
        
 
     </section>
+
     <section id="como-funciona">
         <h2 class="section-title">Como Funciona </h2>
         
@@ -220,7 +211,7 @@
                 </h3>
 
                 <span class="dicas-description">
-                    Acesse a Google Play Store e procure pelo aplicativo "Springlo Book" ou "Springlo Magic". Faça o download e instale no seu dispositivo.
+                    Acesse a Google Play Store e procure pelo aplicativo "Springlo Book"(livro) ou "Springlo Magic"(produtos). Faça o download e instale no seu dispositivo.
                 </span>
 
             </div>
@@ -251,30 +242,9 @@
 
             </div>      
         </div>
-      
-      <!--  <h3 class="baixe-arquivo">
-          
-            <button id ="botaoBaixar"> Visualizar e Imprimir</button>
-            <a href="src/images/livro-interativo-capa.png" download id="botao-download">Download</a>
-            <img id ="minhaImagem"src="src/images/livro-interativo-capa.png" style="display:none;">
-       
-        </h3>-->
        
     </section><!--comofunciona-->
 
-    <!--<div id="gallery-video">
-        <div class="video">
-            <img src="src/images/coelho.png" class=dicas-video alt=""></img>
-        </div>
-        <div class="video">
-            <img src="src/images/aviaoCapaCoelho.jpg"  class=dicas-video alt=""></img>
-        </div>
-        <div class="video">
-            <video src="src/images/video_livro_infantil.mp4" autoplay  muted  class=dicas-video alt=""></video>
-        </div>
-    </div>-->
-
-    
     <section id="sobre-loja">
 
         <div class="sobre-loja-container">

@@ -4,21 +4,12 @@
     position: relative;
 }
 
-
-
-#banner_Capa {
-    width: 100%;
-    background-image: url('../images/banner.png'); /* ajuste o caminho se necessário */
-    background-size: cover;
-    background-position: center;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    
-    padding-top: calc(268 / 1920 * 90%); /* mantém proporção responsiva */
-
-   
-  }
+  #banner_Capa img{
+    position: relative;
+    height: 80%;
+    width:fit-content;
+  
+}
 #cta {
     width: 35%;
     display: flex;
@@ -116,6 +107,12 @@
     #banner img {
         width: 80%; /* A imagem ocupa até 90% da largura disponível */
         max-width: 500px; /* Define a largura máxima para a imagem */
+        height: auto; /* Mantém a proporção */
+       
+    }
+    #banner_Capa img {
+        width: 100%; /* A imagem ocupa até 90% da largura disponível */
+        max-width: 800px; /* Define a largura máxima para a imagem */
         height: auto; /* Mantém a proporção */
        
     }

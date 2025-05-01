@@ -64,6 +64,15 @@
         display: flex;
         gap: 24px;
     }
+
+    #feedbacks
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      
+    }
 }
 
     
