@@ -23,7 +23,7 @@
 <script>
   $(document).ready(function() {
     // Oculta todas as seções ao carregar
-    $('#sobre-livro, #como-funciona, #sobre-loja, #sobre-contato').hide();
+    $('#sobre-livro, #como-funciona, #sobre-loja').hide();
 
     // Função para esconder todas e mostrar a desejada
     function mostrarSecao(secaoID) {
@@ -44,6 +44,8 @@
     $('a[href="#inicio"]').click(function(e) {
         $('#sobre-livro, #como-funciona, #sobre-loja').hide();
         $('#inicio').fadeIn();
+        
+        
     });
     
     $('a[href="#sobre-livro"]').click(function(e) {
@@ -170,9 +172,11 @@
     <section id="sobre-livro">
         <img src="src/images/realidade-aumentada-capa.png" id="sobre-livro-capa"  alt="livro infantil, realidade aumentada, tecnologia, interativo, educação">
         <div id="sobre-livro-content">
+
             <h2 class="section-title">
                 "Bem-vindo à história de Tico!"
             </h2>
+            <br>
 
             <class="description">
                 
@@ -188,62 +192,22 @@
 
     <section id="como-funciona">
         <h2 class="section-title">Como Funciona </h2>
-        
-        <div id="dicas-como-funciona">
-            <div class="dicas">
-                
-                <img src="src/images/icone-loja.png" class=dicas-image alt="">
-                <h3 class="como-funciona-title">
-                    Adquira o nosso produto
-                </h3>
-
-                <span class="como-funciona-description">
-                    Um toque de criatividade para cada momento! Descubra nossos produtos e adicione alegria ao seu dia!
-                </span>
-                
-            </div>
-      
-            <div class="dicas">
-               
-                <img src="src/images/icone-download.png" class=dicas-image alt="">
-                <h3 class="como-funciona-title">
-                    Baixe o aplicativo
-                </h3>
-
-                <span class="dicas-description">
-                    Acesse a Google Play Store e procure pelo aplicativo "Springlo Book"(livro) ou "Springlo Magic"(produtos). Faça o download e instale no seu dispositivo.
-                </span>
-
-            </div>
-            
-            <div class="dicas">
-               
-                <img src="src/images/icone-celular.png" class=dicas-image alt="">
-                <h3 class="como-funciona-title">
-                    Aponte para o produto
-                </h3>
-
-                <span class="como-funciona-description">
-                    Abra o aplicativo, posicione a câmera sobre as imagens de um dos nossos produtos .
-                </span>
-              
-
-            </div>
-            <div class="dicas">
-                
-                <img src="src/images/icone-varinha.png" class=dicas-image alt="">
-                <h3 class="como-funciona-title">
-                    Desperte a Imaginação !
-                </h3>
-
-                <span class="como-funciona-description">
-                    Veja a magia em Realidade Aumentada. Mais que um produto, uma experiência!.
-                </span>
-
-            </div>      
+        <br>
+        <div class="como-funciona-imagens-container">
+          <div class="como-funciona-container">
+            <img src="src/images/como-funciona-1.jpg" id="como-funciona-quadro" alt="como-funciona-1">
+          </div>
+          <div class="como-funciona-container">
+            <img src="src/images/como-funciona-2.jpg" id="como-funciona-quadro" alt="como-funciona-2">
+          </div>
+          <div class="como-funciona-container">
+            <img src="src/images/como-funciona-3.jpg" id="como-funciona-quadro" alt="como-funciona-3">
+          </div>
+          <div class="como-funciona-container">
+            <img src="src/images/como-funciona-4.jpg" id="como-funciona-quadro" alt="como-funciona-4">
+          </div>
         </div>
-       
-    </section><!--comofunciona-->
+      </section>
 
     <section id="sobre-loja">
 
@@ -258,37 +222,43 @@
             <a href="https://loja.uiclap.com/titulo/ua75581/" style="background-color:#007bff; color:white; padding:10px 20px;
              text-decoration:none; border-radius:5px; display:inline-block; font-size:16px;" target="_blank">Compre Aqui</a>
         </div>
+      
 
     </section>
 
     
     <section id="sobre-contato">
-      
         <div id="sobre-contato-content">
-            <h2 class="section-title">
-                Formulário de Contato
-            </h2>
-           
-            <div id="feedbacks-contato">
-                <div class="feedback-loja">
-                    
-                    <div class="feedback-contato-content">
-                        <form action="https://formsubmit.co/ajax/springlo1318@gmail.com"
-                        class="form" method="POST" data-form>
-                        <label for="name">Nome</label>
-                        <input type="text" name="nome" id="nome" required>
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" required>
-                        <label for="message">Mensagem</label>
-                        <textarea name="message" id="message" required></textarea>
-                        <button type="button" data-button>Enviar</button>
-                 </form> 
-                      
-                    </div>
-                </div>
+          <h2 class="section-title">Formulário de Contato</h2>
+      
+          <div id="feedbacks-contato">
+            <div class="feedback-loja">
+              <div class="feedback-contato-content">
+                <form
+                  action="https://formsubmit.co/ajax/springlo1318@gmail.com"
+                  method="POST"
+                  class="form"
+                  data-form
+                >
+                  <label for="nome">Nome</label>
+                  <input type="text" name="nome" id="nome" required />
+      
+                  <label for="email">E-mail</label>
+                  <input type="email" name="email" id="email" required />
+      
+                  <label for="mensagem">Mensagem</label>
+                  <textarea name="mensagem" id="mensagem" required></textarea>
+      
+                  <input type="hidden" name="_captcha" value="false" />
+      
+                  <button type="submit" data-button>Enviar</button>
+                  <div class="form-message" id="form-message"></div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-    </section><!--contato-->
+      </section>
 
     
     
@@ -302,6 +272,62 @@
     </div>
     
    </footer>
+
+   <script>
+    class FormSubmit {
+      constructor(settings) {
+        this.form = document.querySelector(settings.form);
+        this.button = this.form.querySelector(settings.button);
+        this.messageBox = this.form.querySelector("#form-message");
+        this.settings = settings;
+  
+        this.sendForm = this.sendForm.bind(this);
+        this.form.addEventListener("submit", this.sendForm);
+      }
+  
+      showMessage(text, type) {
+        this.messageBox.textContent = text;
+        this.messageBox.className = `form-message ${type}`;
+      }
+  
+      async sendForm(event) {
+        event.preventDefault();
+        this.button.disabled = true;
+        this.button.innerText = "Enviando...";
+  
+        const formData = new FormData(this.form);
+  
+        try {
+          const response = await fetch(this.form.action, {
+            method: "POST",
+            headers: {
+              Accept: "application/json"
+            },
+            body: formData
+          });
+  
+          if (response.ok) {
+            this.form.reset();
+            this.showMessage(this.settings.success, "success");
+          } else {
+            this.showMessage(this.settings.error, "error");
+          }
+        } catch (error) {
+          this.showMessage(this.settings.error, "error");
+        } finally {
+          this.button.disabled = false;
+          this.button.innerText = "Enviar";
+        }
+      }
+    }
+  
+    new FormSubmit({
+      form: "[data-form]",
+      button: "[data-button]",
+      success: "Email enviado com sucesso!",
+      error: "Ocorreu um erro. Tente novamente."
+    });
+  </script>
   
 </body>
 </html>

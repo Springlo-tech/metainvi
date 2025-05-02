@@ -1,121 +1,30 @@
-
-#como-funciona{
+#como-funciona {
     display: flex;
     flex-direction: column;
-    align-items:  center;
+    align-items: center;
+  }
+  
+  .como-funciona-imagens-container {
+    display: flex;
+    flex-wrap: wrap; /* permite quebrar linha em telas menores */
     justify-content: center;
-    min-height: 100vh;
-}
-
-#dicas-como-funciona { /* Alterado para .dishes ao invés de #dishes */
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centraliza os itens dentro do container */
-    gap: 24px; /* Adiciona espaço entre os elementos, se necessário */
-    margin-top: 32px;
-    color: #e6dcdc; 
-   
-}
-
-.dicas{
-    display: flex;
-    flex-direction:  column;
-    align-items: center;
-    border-radius: 20px;
-    gap: 18px;
-    width: 25%;
-    padding: 20px;
-    background-color: #3e4d99;
-    box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
-
-}
-
-
-.dicas-description{
-   color: #e6dcdc; 
-    text-align: center;
-    
-
-}
-
-.dicas-rate i{
-    color: #e9a209;
-}
-
-.dicas-price{
-    display: flex;
-    align-items: center;
     gap: 20px;
-}
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+  
+  .como-funciona-container {
+    flex: 1 1 300px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #como-funciona-quadro {
+    max-width: 100%;
+    height: auto;
+  }
 
-@media screen and (max-width: 1170px){
-    #dicas-como-funciona{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .dicas{
-        width: calc(50% - 24px); /* Aumentei a margem para compensar o gap */
-        margin-bottom: 24px; /* Adiciona espaço abaixo de cada par */
-        display: flex; /* Para alinhar os itens internos verticalmente */
-        flex-direction: column;
-        align-items: center; /* Centraliza os itens horizontalmente */
-        text-align: center; /* Centraliza o texto */
-    }
-
-    .dicas .dicas-image {
-        width: 60%; /* Ajuste o tamanho da imagem conforme necessário */
-        max-width: 150px; /* Defina uma largura máxima para evitar que cresça demais */
-        height: auto;
-        margin-bottom: 12px; /* Espaço entre a imagem e o título */
-    }
-
-    .como-funciona-title {
-        /* Adicione estilos para o título se necessário */
-    }
-
-    .dicas .como-funciona-description {
-        /* Adicione estilos para a descrição se necessário */
-    }
-}
-
-@media screen and (max-width: 600px){
-    .dicas{
-        width: 100%; /* Voltar para uma coluna em telas menores ainda */
-        margin-bottom: 24px;
-    }
-    #como-funciona .section-subtitle{
-        text-align: center;
-    }
-    .dicas .dicas-image {
-        width: 40%; /* Ajuste o tamanho da imagem em telas menores */
-        max-width: 120px;
-        height: auto;
-        margin-bottom: 12px;
-    }
-}
-
-.baixe-arquivo{
-    padding: 50px 20px;
-
-      
-} 
-.botao-download {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color:  #3e4d99;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.botao-download:hover {
-   
-    background-color: #868db0;
-}
 
