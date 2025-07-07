@@ -68,7 +68,7 @@
     position: relative;
     height: 80%;
     width:fit-content;
-    animation: flutuar 2s ease-in-out infinite alternate;
+   
   
 }
 @keyframes flutuar {

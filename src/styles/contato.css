@@ -33,12 +33,14 @@
     display: block;
     width: 100%;
     margin-bottom: 0.5rem;
+    color: #000; /* Preto */
+  
 }
 
 .form input,
 .form textarea {
     font: inherit;
-    background-color: #e8e9f0;
+    background-color:  #e5e9f0;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 1.125rem;
@@ -64,7 +66,7 @@
 
 .form button:focus {
     outline: none;
-    background: cornflowerblue;
+    background:  #194ea8;;
 }
 
 .form button:hover {
