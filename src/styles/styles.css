@@ -1,0 +1,670 @@
+ :root {
+            --primary-color: #0056b3; /* Azul escuro principal */
+            --secondary-color: #004085; /* Azul mais escuro para destaque */
+            --accent-color: #28a745; /* Verde para botões de sucesso/destaque */
+            --text-color: #333; /* Texto principal */
+            --light-text-color: #666; /* Texto secundário */
+            --bg-light: #f8f9fa; /* Fundo claro para seções */
+            --bg-dark: #e9ecef; /* Fundo um pouco mais escuro para alternar seções */
+            --white: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: var(--white);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #218838; /* Um verde um pouco mais escuro */
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Para responsividade em telas pequenas */
+        }
+
+        header .logo img {
+            height: 50px; /* Ajuste conforme o tamanho do seu logo */
+            /*filter: brightness(0) invert(1); /* Para logos escuros em fundo escuro, tornar branco */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 30px;
+        }
+
+        header nav ul li a {
+            color: var(--white);
+            font-weight: 600;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        header nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 64, 133, 0.8), rgba(0, 64, 133, 0.8)), url('[CAMINHO_PARA_IMAGEM_DE_FUNDO_DO_HERO.jpg]') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        section:nth-of-type(even) { /* Alternar cor de fundo para seções pares */
+            background-color: var(--bg-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--light-text-color);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Quem Somos */
+        .about-section .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-section .about-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .about-section .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .about-section .about-text ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .about-section .about-text ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            position: relative;
+            padding-left: 25px;
+        }
+        .about-section .about-text ul li::before {
+            content: "\f00c"; /* Checkmark icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Destaque para texto sem negrito/itálico, apenas cor */
+        .highlight-text {
+            color: var(--primary-color); /* Usando o azul principal para o destaque */
+            font-weight: 600; /* Mantendo um pouco de peso para destacar, se desejar */
+        }
+        /* Serviços */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .service-item p {
+            font-size: 0.95em;
+            color: var(--light-text-color);
+        }
+
+        /* Cases de Sucesso */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .case-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .case-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .case-item p {
+            font-size: 0.95em;
+            color: var(--light-text-color);
+        }
+
+        .case-item .btn {
+            margin-top: 20px;
+            align-self: flex-start;
+        }
+
+        /* Depoimentos */
+     
+
+         .testimonials-section {
+            /* Se você quiser que ela tenha um fundo claro como na imagem: */
+            background-color: var(--bg-light); /* Ou var(--bg-dark), para alternar */
+            color: var(--text-color); /* Defina a cor do texto padrão para esta seção */
+            text-align: center;
+            padding: 80px 0;
+        }
+         .testimonials-section h2 {
+            color: var(--secondary-color); /* Corrigido: Agora o título será azul escuro */
+        }
+       .testimonials-section h2::after {
+            background-color: var(--primary-color); /* Pode manter o azul primário ou verde do accent */
+        }
+        .testimonial-slider {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .testimonial-item span {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* Contato */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+        .contact-section h2 {
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            font-weight: 600;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .form-message.success {
+          color: green;
+        }
+
+        .form-message.error {
+          color: red;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-links li a {
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            header .container {
+                flex-direction: column;
+            }
+            header nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+            }
+            header nav ul li {
+                margin: 10px 0;
+            }
+            .hero-section {
+                padding: 80px 20px;
+            }
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1.1em;
+            }
+            .about-section .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section .about-image {
+                margin-bottom: 30px;
+            }
+            .services-grid, .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-slider {
+                flex-direction: column;
+            }
+            .testimonial-item {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            .hero-section {
+                padding: 60px 15px;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            .contact-form {
+                padding: 20px;
+            }
+        }
+
+        /* Adicione estas variáveis de cor se ainda não as tiver */
+        :root {
+            --primary-color: #0056b3; /* Azul escuro principal */
+            --secondary-color: #004085; /* Azul mais escuro para destaque */
+            --accent-color: #28a745; /* Verde para botões de sucesso/destaque */
+            --text-color: #333; /* Texto principal */
+            --light-text-color: #666; /* Texto secundário */
+            --bg-light: #f8f9fa; /* Fundo claro para seções */
+            --bg-dark: #e9ecef; /* Fundo um pouco mais escuro para alternar seções */
+            --white: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        /* Estilos para o título da galeria (se for diferente do H2 padrão) */
+        .gallery-title {
+            margin-top: 80px; /* Espaçamento entre os cases de texto e a galeria */
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            text-align: center;
+            font-size: 2.2em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .gallery-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+
+        /* Estilos da Galeria de Projetos */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px; /* Altura fixa para as imagens */
+            object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05); /* Pequeno zoom na imagem ao passar o mouse */
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 86, 179, 0.9); /* Cor de overlay com transparência */
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(100%); /* Esconde o overlay inicialmente */
+            transition: transform 0.4s ease-out;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0); /* Mostra o overlay ao passar o mouse */
+        }
+
+        .gallery-overlay h3 {
+            color: var(--white);
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Responsividade para a galeria */
+        @media (max-width: 768px) {
+            .project-gallery {
+                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+            }
+            .gallery-item img {
+                height: 220px; /* Ajusta a altura da imagem em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item img {
+                height: 180px; /* Mais ajuste para telas muito pequenas */
+            }
+            .gallery-overlay h3 {
+                font-size: 1.2em;
+            }
+            .gallery-overlay p {
+                font-size: 0.85em;
+            }
+        }

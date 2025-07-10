@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Consultoria - Mais de 30 Anos de Excelência em Gestão da Qualidade, ISO e LEED</title>
+    <meta name="description" content="Com mais de 30 anos de experiência, oferecemos consultoria especializada em sistemas de gestão da qualidade, implantação ISO e certificação LEED. Conte com a expertise de quem é referência no mercado.">
+    <meta name="keywords" content="consultoria, gestão da qualidade, ISO, ISO 9001, ISO 14001, ISO 45001, LEED, certificação LEED, auditoria, qualidade, conformidade, otimização de processos, consultor de qualidade, especialista em ISO">
+    <meta name="author" content="Seu Nome ou Nome da Sua Empresa">
+    <link rel="canonical" href="[SUA URL CANÔNICA AQUI, EX: https://www.suaconsultoria.com.br]">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #0056b3; /* Azul escuro principal */
+            --secondary-color: #004085; /* Azul mais escuro para destaque */
+            --accent-color: #28a745; /* Verde para botões de sucesso/destaque */
+            --text-color: #333; /* Texto principal */
+            --light-text-color: #666; /* Texto secundário */
+            --bg-light: #f8f9fa; /* Fundo claro para seções */
+            --bg-dark: #e9ecef; /* Fundo um pouco mais escuro para alternar seções */
+            --white: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: var(--white);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #218838; /* Um verde um pouco mais escuro */
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Para responsividade em telas pequenas */
+        }
+
+        header .logo img {
+            height: 50px; /* Ajuste conforme o tamanho do seu logo */
+            /*filter: brightness(0) invert(1); /* Para logos escuros em fundo escuro, tornar branco */
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 30px;
+        }
+
+        header nav ul li a {
+            color: var(--white);
+            font-weight: 600;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        header nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 64, 133, 0.8), rgba(0, 64, 133, 0.8)), url('[CAMINHO_PARA_IMAGEM_DE_FUNDO_DO_HERO.jpg]') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        section:nth-of-type(even) { /* Alternar cor de fundo para seções pares */
+            background-color: var(--bg-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--light-text-color);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Quem Somos */
+        .about-section .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-section .about-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .about-section .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .about-section .about-text ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .about-section .about-text ul li {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            position: relative;
+            padding-left: 25px;
+        }
+        .about-section .about-text ul li::before {
+            content: "\f00c"; /* Checkmark icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Destaque para texto sem negrito/itálico, apenas cor */
+        .highlight-text {
+            color: var(--primary-color); /* Usando o azul principal para o destaque */
+            font-weight: 600; /* Mantendo um pouco de peso para destacar, se desejar */
+        }
+        /* Serviços */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .service-item p {
+            font-size: 0.95em;
+            color: var(--light-text-color);
+        }
+
+        /* Cases de Sucesso */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .case-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .case-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .case-item p {
+            font-size: 0.95em;
+            color: var(--light-text-color);
+        }
+
+        .case-item .btn {
+            margin-top: 20px;
+            align-self: flex-start;
+        }
+
+        /* Depoimentos */
+     
+
+         .testimonials-section {
+            /* Se você quiser que ela tenha um fundo claro como na imagem: */
+            background-color: var(--bg-light); /* Ou var(--bg-dark), para alternar */
+            color: var(--text-color); /* Defina a cor do texto padrão para esta seção */
+            text-align: center;
+            padding: 80px 0;
+        }
+         .testimonials-section h2 {
+            color: var(--secondary-color); /* Corrigido: Agora o título será azul escuro */
+        }
+       .testimonials-section h2::after {
+            background-color: var(--primary-color); /* Pode manter o azul primário ou verde do accent */
+        }
+        .testimonial-slider {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .testimonial-item span {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* Contato */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+            text-align: center;
+        }
+        .contact-section h2 {
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            font-weight: 600;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .form-message.success {
+          color: green;
+        }
+
+        .form-message.error {
+          color: red;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-links li a {
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsividade Básica */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            header .container {
+                flex-direction: column;
+            }
+            header nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+            }
+            header nav ul li {
+                margin: 10px 0;
+            }
+            .hero-section {
+                padding: 80px 20px;
+            }
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1.1em;
+            }
+            .about-section .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section .about-image {
+                margin-bottom: 30px;
+            }
+            .services-grid, .cases-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-slider {
+                flex-direction: column;
+            }
+            .testimonial-item {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            .hero-section {
+                padding: 60px 15px;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            .contact-form {
+                padding: 20px;
+            }
+        }
+
+        /* Adicione estas variáveis de cor se ainda não as tiver */
+        :root {
+            --primary-color: #0056b3; /* Azul escuro principal */
+            --secondary-color: #004085; /* Azul mais escuro para destaque */
+            --accent-color: #28a745; /* Verde para botões de sucesso/destaque */
+            --text-color: #333; /* Texto principal */
+            --light-text-color: #666; /* Texto secundário */
+            --bg-light: #f8f9fa; /* Fundo claro para seções */
+            --bg-dark: #e9ecef; /* Fundo um pouco mais escuro para alternar seções */
+            --white: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        /* Estilos para o título da galeria (se for diferente do H2 padrão) */
+        .gallery-title {
+            margin-top: 80px; /* Espaçamento entre os cases de texto e a galeria */
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            text-align: center;
+            font-size: 2.2em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .gallery-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+
+        /* Estilos da Galeria de Projetos */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px; /* Altura fixa para as imagens */
+            object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05); /* Pequeno zoom na imagem ao passar o mouse */
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 86, 179, 0.9); /* Cor de overlay com transparência */
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(100%); /* Esconde o overlay inicialmente */
+            transition: transform 0.4s ease-out;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0); /* Mostra o overlay ao passar o mouse */
+        }
+
+        .gallery-overlay h3 {
+            color: var(--white);
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Responsividade para a galeria */
+        @media (max-width: 768px) {
+            .project-gallery {
+                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+            }
+            .gallery-item img {
+                height: 220px; /* Ajusta a altura da imagem em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item img {
+                height: 180px; /* Mais ajuste para telas muito pequenas */
+            }
+            .gallery-overlay h3 {
+                font-size: 1.2em;
+            }
+            .gallery-overlay p {
+                font-size: 0.85em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+         
+            <div class="logo">
+                <a href="#hero">
+                   <img src="src/images/icone_logo.png" alt="Logotipo da Sua Consultoria">
+                   
+                </a>
+            </div>
+           
+            <nav>
+                <ul>
+                    <li><a href="#quem-somos">Quem Somos</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#cases">Cases de Sucesso</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <h1>Mais de 30 Anos de Excelência em Gestão da Qualidade e Conformidade.</h1>
+            <p>Sua segurança e sucesso em ISO, LEED , PBQP-H e Auditoria, guiados por décadas de experiência.</p>
+            <a href="#contato" class="btn btn-primary">Agende Sua Consultoria Gratuita</a>
+        </div>
+    </section>
+
+    <section id="quem-somos" class="about-section">
+        <div class="container">
+            <h2>Como Posso Ajudar</h2>
+            <div class="about-content">
+                <img src="src/images/foto.png" alt="Foto profissional do consultor" class="about-image">
+                <div class="about-text">
+                    <p>Com mais <span class="highlight-text">de três décadas de experiência</span>, consolidada no setor de construção civil, minha carreira é marcada pela liderança estratégica e gestão de empreendimentos complexos e de grande porte.
+                    <p>Minha trajetória inclui a gestão estratégica e execução bem-sucedida de empreendimentos icônicos e complexos, como o Itower Alphaville (Corporativo), Praça São Paulo (Corporativo, Residencial, Hotel, Salas Comerciais e Mall) e Parque da Cidade Gleba A (Corporativo / Shopping), entre outros. Essa vivência me proporcionou um conhecimento aprofundado dos desafios e das soluções necessárias para projetos de grande escala, garantindo resultados de excelência.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <h2>Soluções Estratégicas para o Seu Negócio.</h2>
+            <p class="section-subtitle">Transformando desafios em oportunidades de crescimento e reconhecimento.</p>
+            <div class="services-grid">
+                
+                <div class="service-item">
+                    <h3><i class="fas fa-certificate"></i> Consultoria e Implantação de Sistemas de Gestão da Qualidade (ISO 9001 e PBQP-H)</h3>
+                    <p>Desenvolvemos e implementamos sistemas personalizados que otimizam seus processos e garantem conformidade com os mais altos padrões. Preparamos sua empresa para obter e manter as certificações ISO 9001 e PBQP-H, fortalecendo sua credibilidade e acesso a novos mercados.</p>
+                </div>
+                <div class="service-item">
+                    <h3><i class="fas fa-leaf"></i> Consultoria para Certificação LEED</h3>
+                    <p>Orientamos seu projeto ou empreendimento na busca pela certificação LEED, promovendo sustentabilidade e valorização de ativos.</p>
+                </div>
+                <div class="service-item">
+                    <h3><i class="fas fa-clipboard-check"></i> Auditoria Interna e de Terceira Parte</h3>
+                    <p>Realizamos auditorias rigorosas e imparciais para identificar pontos de melhoria e assegurar a conformidade contínua.</p>
+                </div>
+                <div class="service-item">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Treinamentos Personalizados</h3>
+                    <p>Capacitamos sua equipe com o conhecimento necessário para gerenciar e manter os sistemas de gestão com autonomia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases" class="cases-section">
+        <div class="container">
+            <h2>Nossa Experiência em Ação: Cases de Sucesso.</h2>
+            <p class="section-subtitle">Veja como empresas de diversos setores alcançaram a excelência com nossa consultoria.</p>
+            <div class="cases-grid">
+                <div class="case-item">
+                    <h3>Empresa do Setor de Manufatura: Certificação ISO 9001</h3>
+                    <p><strong>O Desafio:</strong> A empresa precisava da certificação ISO 9001 para acessar novos mercados e padronizar processos internos.</p>
+                    <p><strong>Nossa Solução:</strong> Implementação completa do Sistema de Gestão da Qualidade, com mapeamento de processos, treinamentos e auditorias internas preparatórias.</p>
+                    <p><strong>Os Resultados:</strong> Certificação ISO 9001 obtida em 8 meses, com **15% de aumento na eficiência operacional** e redução de não-conformidades.</p>
+                    <a href="[LINK_PARA_DETALHES_DO_CASE_1]" class="btn btn-secondary">Saiba Mais</a>
+                </div>
+
+                <div class="case-item">
+                    <h3>Startup de Tecnologia: Otimização e Sustentabilidade LEED</h3>
+                    <p><strong>O Desafio:</strong> A startup buscava construir seu novo escritório com foco em sustentabilidade e obter a certificação LEED.</p>
+                    <p><strong>Nossa Solução:</strong> Consultoria desde a fase de projeto, orientando a escolha de materiais, sistemas eficientes e práticas sustentáveis para atender aos requisitos LEED.</p>
+                    <p><strong>Os Resultados:</strong> Obtenção do selo **LEED Gold**, com reconhecimento no mercado, **redução de 25% nos custos de energia** e maior engajamento dos colaboradores.</p>
+                    <a href="[LINK_PARA_DETALHES_DO_CASE_2]" class="btn btn-secondary">Saiba Mais</a>
+                </div>
+
+                <div class="case-item">
+                    <h3>Empresa de Serviços: Redução de Custos com Gestão da Qualidade</h3>
+                    <p><strong>O Desafio:</strong> A empresa enfrentava altos custos de retrabalho e insatisfação de clientes devido a processos inconsistentes.</p>
+                    <p><strong>Nossa Solução:</strong> Análise de lacunas, revisão e implementação de novos procedimentos de gestão da qualidade focados na eliminação de desperdícios.</p>
+                    <p><strong>Os Resultados:</strong> Redução de **20% nos custos operacionais** relacionados a não-conformidades e aumento da satisfação do cliente.</p>
+                    <a href="[LINK_PARA_DETALHES_DO_CASE_3]" class="btn btn-secondary">Saiba Mais</a>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <!--  <section id="cases" class="cases-section">
+        <div class="container">
+            <h2>Nossa Experiência em Ação: Cases de Sucesso.</h2>
+            <p class="section-subtitle">Veja como empresas de diversos setores alcançaram a excelência com nossa consultoria.</p>
+            <div class="cases-grid">
+                </div>
+
+            <h2 class="gallery-title">Nossos Projetos em Destaque: Edificações Certificadas.</h2>
+            <p class="section-subtitle">A qualidade e sustentabilidade que transformamos em realidade, visível em cada estrutura.</p>
+
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="src/images/empreendimento1.png" alt="Edifício Comercial - Certificação LEED Gold">
+                    <div class="gallery-overlay">
+                        <h3>Edifício Inovação Alpha</h3>
+                        <p>Certificação: **LEED Gold**</p>
+                        <p>Local: São Paulo, SP</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="src/images/empreendimento2.png" alt="Sede Corporativa - Certificação ISO 14001 e LEED Silver">
+                    <div class="gallery-overlay">
+                        <h3>Sede Sustentável Beta</h3>
+                        <p>Certificação: **ISO 14001, LEED Silver**</p>
+                        <p>Local: Rio de Janeiro, RJ</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                     <img src="src/images/empreendimento3.png" alt="Centro de Distribuição - Otimização de Processos ISO">
+                    <div class="gallery-overlay">
+                        <h3>Centro Logístico Gama</h3>
+                        <p>Projeto: Otimização de Processos e Auditoria</p>
+                        <p>Local: Campinas, SP</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                     <img src="src/images/empreendimento4.png" alt="Residencial Ecológico - Consultoria para Sustentabilidade">
+                    <div class="gallery-overlay">
+                        <h3>Condomínio xxx</h3>
+                        <p>Consultoria: Princípios de Sustentabilidade</p>
+                        <p>Local: São Paulo, SP</p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>-->
+
+    <section id="depoimentos" class="testimonials-section">
+        <div class="container">
+            <h2>O Que Nossos Clientes Dizem.</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-item">
+                    <p>"A profundidade do conhecimento e a atenção personalizada fizeram toda a diferença. Altamente recomendado!"</p>
+                    <span>- CEO, Indústria Química</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Conseguimos a certificação ISO em tempo recorde graças à metodologia e suporte impecável."</p>
+                    <span>- Gerente de Qualidade, Empresa de Logística</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact-section">
+  <div class="container">
+    <h2>Pronto para Elevar Seus Padrões?</h2>
+    <p class="section-subtitle">
+      Vamos conversar sobre como mais de 30 anos de experiência podem impulsionar o sucesso da sua empresa.
+    </p>
+    <form action="https://formsubmit.co/ajax/alcides.olivares@hotmail.com" method="POST" class="contact-form" data-form>
+      <div class="form-group">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone">
+      </div>
+      <div class="form-group">
+        <label for="mensagem">Sua Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+      </div>
+
+      <!-- Mensagem de retorno -->
+      <div id="form-message" class="form-message"></div>
+
+      <button type="submit" class="btn btn-primary" data-button>Enviar Mensagem</button>
+    </form>
+
+    <div class="contact-info">
+      <p>Ou entre em contato diretamente:</p>
+      <p><i class="fas fa-envelope"></i> E-mail: <a href="mailto:alcides.olivares@hotmail.com">alcides.olivares@hotmail.com</a></p>
+      <p><i class="fas fa-phone"></i> Telefone: <a href="tel:+5511994576759">(11) 99457-6759</a></p>
+      <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/alcides-olivares-metainvi" target="_blank">Alcides Olivares</a></p>
+    </div>
+  </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sua Consultoria. Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#politica-privacidade">Política de Privacidade</a></li>
+                <li><a href="#termos-uso">Termos de Uso</a></li>
+            </ul>
+        </div>
+    </footer>
+
+   <script>
+      class FormSubmit {
+      constructor(settings) {
+      this.form = document.querySelector(settings.form);
+      this.button = this.form.querySelector(settings.button);
+      this.messageBox = document.querySelector("#form-message");
+      this.settings = settings;
+
+      this.sendForm = this.sendForm.bind(this);
+      this.form.addEventListener("submit", this.sendForm);
+    }
+
+    showMessage(text, type) {
+      this.messageBox.textContent = text;
+      this.messageBox.className = `form-message ${type}`;
+    }
+
+    async sendForm(event) {
+      event.preventDefault();
+      this.button.disabled = true;
+      this.button.innerText = "Enviando...";
+
+      const formData = new FormData(this.form);
+
+      try {
+        const response = await fetch(this.form.action, {
+          method: "POST",
+          headers: {
+            Accept: "application/json"
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          this.form.reset();
+          this.showMessage(this.settings.success, "success");
+        } else {
+          this.showMessage(this.settings.error, "error");
+        }
+      } catch (error) {
+        this.showMessage(this.settings.error, "error");
+      } finally {
+        this.button.disabled = false;
+        this.button.innerText = "Enviar Mensagem";
+      }
+    }
+  }
+
+  new FormSubmit({
+    form: "[data-form]",
+    button: "[data-button]",
+    success: "Email enviado com sucesso!",
+    error: "Ocorreu um erro. Tente novamente."
+  });
+</script>
+
+
+
+</body>
+</html>
