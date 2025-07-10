@@ -464,6 +464,19 @@
             font-weight: 600;
         }
 
+        .form-message {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .form-message.success {
+          color: green;
+        }
+
+        .form-message.error {
+          color: red;
+        }
+
         /* Footer */
         footer {
             background-color: var(--secondary-color);
@@ -846,38 +859,43 @@
     </section>
 
     <section id="contato" class="contact-section">
-        <div class="container">
-            <h2>Pronto para Elevar Seus Padrões?</h2>
-            <p class="section-subtitle">Vamos conversar sobre como mais de 30 anos de experiência podem impulsionar o sucesso da sua empresa.</p>
-            <form action="[SEU_ENDPOINT_DE_FORMULARIO_AQUI]" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone">
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Sua Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-            </form>
-            <div class="contact-info">
-                <p>Ou entre em contato diretamente:</p>
-                <p><i class="fas fa-envelope"></i> E-mail: <a href="mailto:alcides.olivares@hotmail.com">alcides.olivares@hotmail.com</a></p>
-                <p><i class="fas fa-phone"></i> Telefone: <a href="tel:+5511994576759">(11) 994576759</a></p>
-                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href=https://www.linkedin.com/in/alcides-olivares-metainvi target="_blank">Alcides Olivares</a></p>
-                </div>
-        </div>
-    </section>
+  <div class="container">
+    <h2>Pronto para Elevar Seus Padrões?</h2>
+    <p class="section-subtitle">
+      Vamos conversar sobre como mais de 30 anos de experiência podem impulsionar o sucesso da sua empresa.
+    </p>
+    <form action="https://formsubmit.co/ajax/alcides.olivares@hotmail.com" method="POST" class="contact-form" data-form>
+      <div class="form-group">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone">
+      </div>
+      <div class="form-group">
+        <label for="mensagem">Sua Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+      </div>
 
-   
+      <!-- Mensagem de retorno -->
+      <div id="form-message" class="form-message"></div>
+
+      <button type="submit" class="btn btn-primary" data-button>Enviar Mensagem</button>
+    </form>
+
+    <div class="contact-info">
+      <p>Ou entre em contato diretamente:</p>
+      <p><i class="fas fa-envelope"></i> E-mail: <a href="mailto:alcides.olivares@hotmail.com">alcides.olivares@hotmail.com</a></p>
+      <p><i class="fas fa-phone"></i> Telefone: <a href="tel:+5511994576759">(11) 99457-6759</a></p>
+      <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/alcides-olivares-metainvi" target="_blank">Alcides Olivares</a></p>
+    </div>
+  </div>
+</section>
 
     <footer>
         <div class="container">
@@ -889,11 +907,63 @@
         </div>
     </footer>
 
-    <script>
-        // Este é um exemplo básico para um menu responsivo, se você for ter um ícone de hambúrguer.
-        // Se a navegação for sempre visível, como neste layout, pode não ser necessário.
-        // Se você implementar um menu hambúrguer, precisará de um botão no header e ajustar o CSS.
-    </script>
+   <script>
+      class FormSubmit {
+      constructor(settings) {
+      this.form = document.querySelector(settings.form);
+      this.button = this.form.querySelector(settings.button);
+      this.messageBox = document.querySelector("#form-message");
+      this.settings = settings;
+
+      this.sendForm = this.sendForm.bind(this);
+      this.form.addEventListener("submit", this.sendForm);
+    }
+
+    showMessage(text, type) {
+      this.messageBox.textContent = text;
+      this.messageBox.className = `form-message ${type}`;
+    }
+
+    async sendForm(event) {
+      event.preventDefault();
+      this.button.disabled = true;
+      this.button.innerText = "Enviando...";
+
+      const formData = new FormData(this.form);
+
+      try {
+        const response = await fetch(this.form.action, {
+          method: "POST",
+          headers: {
+            Accept: "application/json"
+          },
+          body: formData
+        });
+
+        if (response.ok) {
+          this.form.reset();
+          this.showMessage(this.settings.success, "success");
+        } else {
+          this.showMessage(this.settings.error, "error");
+        }
+      } catch (error) {
+        this.showMessage(this.settings.error, "error");
+      } finally {
+        this.button.disabled = false;
+        this.button.innerText = "Enviar Mensagem";
+      }
+    }
+  }
+
+  new FormSubmit({
+    form: "[data-form]",
+    button: "[data-button]",
+    success: "Email enviado com sucesso!",
+    error: "Ocorreu um erro. Tente novamente."
+  });
+</script>
+
+
 
 </body>
 </html>
